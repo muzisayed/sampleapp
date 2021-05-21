@@ -1,0 +1,28 @@
+{
+    "9783461e-4243-8c7a-a8de-c5ea566c4005": {
+        "dataModelId": "9783461e-4243-8c7a-a8de-c5ea566c4005",
+        "name": "heromodel",
+        "description": "hero model",
+        "dataSource": "neutrinos-training-rt",
+        "fields": [
+            {
+                "name": "name",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "description",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "skills",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            }
+        ]
+    }
+}

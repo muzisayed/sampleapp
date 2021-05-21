@@ -1,0 +1,28 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <form [formGroup]="sampleform">
+    <div fxLayout="column wrap" fxLayoutAlign="none none" [fxShow]="true" [fxHide]="false">
+      <h3 style="background-color:green;" class="hhh">
+        Name</h3>
+      <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+        <input matInput placeholder="Input" [required]="true" formControlName="name">
+
+      </mat-form-field>
+      <h3>
+        Description</h3>
+      <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+        <input matInput placeholder="Input" [required]="false" formControlName="description">
+
+      </mat-form-field>
+      <h3>
+        Skill</h3>
+      <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+        <mat-select formControlName="skill" placeholder="Select" [required]="false">
+          <mat-option [value]="&apos;smart&apos;" disabled="false">smart</mat-option>
+          <mat-option [value]="&apos;intelligent&apos;" disabled="false">intelligent</mat-option>
+        </mat-select>
+
+      </mat-form-field>
+      <div fxLayout="row wrap" fxLayoutAlign="none center" [fxShow]="true" [fxHide]="false"><button mat-raised-button color="accent" (click)="onSubmit()">Submit</button><button mat-raised-button>Clear</button></div>
+    </div>
+  </form>
+</div>

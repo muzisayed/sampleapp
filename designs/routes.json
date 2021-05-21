@@ -1,0 +1,28 @@
+{
+    "routes": [
+        {
+            "component": "tableComponent",
+            "path": "table",
+            "redirectTo": "",
+            "pathMatch": ""
+        },
+        {
+            "path": "validation",
+            "component": "validationComponent"
+        },
+        {
+            "path": "home",
+            "component": "homeComponent"
+        },
+        {
+            "path": "''",
+            "redirectTo": "table",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent"
+        }
+    ]
+}

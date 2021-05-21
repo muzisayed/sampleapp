@@ -1,0 +1,91 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <mat-accordion class="exp_outlet">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+
+          <mat-panel-title>
+            Dashboard
+          </mat-panel-title>
+          <mat-panel-description>
+
+          </mat-panel-description>
+        </mat-expansion-panel-header><label>
+          Table</label>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-horizontal-stepper class="stepper">
+      <mat-step label="Enter personal details" completed="true" [stepControl]="validationform" optional="false" hasError="true" errorMessage="Enter the required feilds">
+        <form [formGroup]="validationform" class="center">
+          <div fxLayout="row wrap" class="row" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false"><label class="label">
+              Required Text</label>
+            <mat-form-field color="primary" class="input" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [required]="true" formControlName="required">
+              <mat-error align="start" *ngIf="validationform.controls.required.errors?.required">This feild is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" class="row" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false"><label class="label">
+              Optional Text</label>
+            <mat-form-field class="input" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [required]="false" formControlName="optional">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" class="row" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false"><label class="label">
+              Email</label>
+            <mat-form-field class="input" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [required]="false" formControlName="email">
+              <mat-error align="start" *ngIf="validationform.controls.email.errors?.email">Enter a valid email</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" class="row" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false"><label class="label">
+              Max Length</label>
+            <mat-form-field class="input" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [required]="false" formControlName="maxlength">
+              <mat-error align="start" *ngIf="validationform.controls.maxlength.errors?.maxlength">Max length is 6</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" class="row" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false"><label class="label">
+              Min Length</label>
+            <mat-form-field class="input" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [required]="false" formControlName="minlengthvalidation">
+              <mat-error align="start" *ngIf="validationform.controls.minlengthvalidation.errors?.minlength">Min length is 3</mat-error>
+            </mat-form-field>
+          </div><button mat-raised-button color="primary">Next</button>
+        </form>
+      </mat-step>
+      <mat-step label="Enter professional details" completed="false" [stepControl]="validationform2" optional="false" editable="false">
+        <form [formGroup]="validationform2" class="center">
+          <div fxLayout="row wrap" class="row" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false"><label class="label">
+              Equals</label>
+            <mat-form-field class="input" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [required]="false" formControlName="equals1">
+
+            </mat-form-field>
+            <mat-form-field class="input" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [required]="false" formControlName="equals2">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" class="row" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false"><label class="label">
+              Number</label>
+            <mat-form-field class="input" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [required]="false" formControlName="numb">
+              <mat-error align="start" *ngIf="validationform2.controls.numb.errors?.pattern(&apos;[a-zA-Z ]*&apos;)">Enter only numbers</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" class="row" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false"><label class="label">
+              Date</label>
+            <mat-form-field [appearance]="&apos;legacy&apos;">
+              <input matInput placeholder="Date Picker" [matDatepicker]="picker" [required]="false" [disabled]="false">
+              <mat-datepicker-toggle matSuffix [for]="picker" disabled="false"></mat-datepicker-toggle>
+              <mat-datepicker #picker [disabled]="false"></mat-datepicker>
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button color="accent" (click)="onSubmit()">Submit</button></div>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+</div>

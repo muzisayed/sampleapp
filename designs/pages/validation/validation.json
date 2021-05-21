@@ -1,0 +1,14 @@
+{
+    "appPageId": "8b05ae2a-f557-40e2-8208-a74e97778fc2",
+    "appPageName": "validation",
+    "componentName": "validationComponent",
+    "selectorName": "bh-validation",
+    "htmlFileName": "validation.template.html",
+    "tsFileName": "validation.component.ts",
+    "createDate": "2021-05-19T17:23:48.481Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}
